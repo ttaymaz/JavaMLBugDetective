@@ -1,0 +1,53 @@
+MIT License
+
+Copyright (c) 2025 Turgay Taymaz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+THIRD-PARTY SOFTWARE LICENSES
+
+This software uses or derives data from the following open-source projects:
+
+1. Apache Kafka
+   License: Apache License 2.0
+   URL: https://kafka.apache.org/
+   
+2. Google Gson
+   License: Apache License 2.0
+   URL: https://github.com/google/gson
+   
+3. Apache Commons-IO
+   License: Apache License 2.0
+   URL: https://commons.apache.org/proper/commons-io/
+   
+4. Eclipse JGit
+   License: Eclipse Distribution License 1.0
+   URL: https://www.eclipse.org/jgit/
+   
+5. PMD
+   License: BSD-style License
+   URL: https://pmd.github.io/
+   
+6. Weka Machine Learning Toolkit
+   License: GNU General Public License v3.0
+   URL: https://www.cs.waikato.ac.nz/ml/weka/
+
+All third-party software retains its original license.
