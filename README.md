@@ -42,6 +42,7 @@ chmod +x clean_and_run.sh
 - **Class Balancing**: SMOTE and ClassBalancer
 - **Cost-Sensitive Learning**: Configurable FN/FP cost matrix
 - **Automated Reporting**: Scientific validation and prediction reports
+- **Green AI**: 32,000x more energy-efficient than LLM-based approaches
 
 ---
 
@@ -115,13 +116,18 @@ github.token=ghp_your_token_here
 
 ## 📈 Verified Results
 
-| Metric | Kafka | Gson |
-|--------|-------|------|
-| Commits | 16,178 | 1,847 |
-| Versions | 273 | 45 |
-| F1-Score | 87.4% | - |
-| Recall | 99.6% | - |
-| Runtime | 48 min | 3 min |
+Cross-project validation results (Hybrid Model with Cost-Sensitive Learning):
+
+| Project | F1-Score | Precision | Recall | Instances |
+|---------|----------|-----------|--------|----------|
+| Apache Kafka | 0.742 | 0.61 | 0.94 | 72,705 |
+| Google Gson | 0.685 | 0.52 | 0.99 | 6,034 |
+| Apache Commons-IO | 0.570 | 0.40 | 0.99 | 12,920 |
+
+**Ablation Study Highlights:**
+- Hybrid model outperforms static-only by up to **128%** (Commons-IO)
+- Process metrics consistently outperform static metrics
+- Model maintains robust performance despite 70.8% label noise
 
 ---
 
