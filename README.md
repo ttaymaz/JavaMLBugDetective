@@ -1,6 +1,6 @@
 # JavaMLBugDetective
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18161123.svg)](https://doi.org/10.5281/zenodo.18161123)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19218373.svg)](https://doi.org/10.5281/zenodo.19218373)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-21-orange)]()
 [![Maven](https://img.shields.io/badge/Maven-3.9+-red)]()
@@ -169,7 +169,7 @@ Cross-project validation results (Hybrid Model with Cost-Sensitive Learning):
 
 The **JML-BugDB** dataset and complete replication package are permanently archived at Zenodo:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18161123.svg)](https://doi.org/10.5281/zenodo.18161123)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19218373.svg)](https://doi.org/10.5281/zenodo.19218373)
 
 The package includes:
 - JML-BugDB dataset (91,633 instances across 3 Java projects)
@@ -189,8 +189,8 @@ If you use this work in your research, please cite:
   title     = {JavaMLBugDetective: ML-Aided Bug Prediction Framework},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.18161123},
-  url       = {https://doi.org/10.5281/zenodo.18161123}
+  doi       = {10.5281/zenodo.19218373},
+  url       = {https://doi.org/10.5281/zenodo.19218373}
 }
 ```
 
