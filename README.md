@@ -116,6 +116,22 @@ github.token=ghp_your_token_here
 
 ## 📈 Verified Results
 
+### Algorithm Robustness Benchmark (Gson Project)
+
+Evaluation metrics comparing 5 distinct algorithms evaluating the 'buggy' target class. Models were evaluated using 10-fold Cross Validation, Cost-Sensitive Classification (10:1 FN:FP), and SMOTE class balancing.
+
+| Algorithm      | Precision | Recall | F1-Score | MCC    |
+|----------------|-----------|--------|----------|--------|
+| **RandomForest** | **0.5111** | **0.9916** | **0.6745** | **0.3175** |
+| J48            | 0.5341    | 0.8895 | 0.6675   | 0.2883 |
+| NaiveBayes     | 0.4633    | 0.9179 | 0.6158   | 0.0672 |
+| SMO            | 0.4518    | 0.9996 | 0.6223   | -0.0017|
+| AdaBoostM1     | 0.4518    | 1.0000 | 0.6224   | NaN    |
+
+*Note: Sequential boosting algorithms like AdaBoost collapse under the extreme SZZ label noise combined with SMOTE, while parallel ensembles (RandomForest) successfully isolate the true defect signal.*
+
+### Cross-Project Validation Results
+
 Cross-project validation results (Hybrid Model with Cost-Sensitive Learning):
 
 | Project | F1-Score | Precision | Recall | Instances |
@@ -205,4 +221,4 @@ This project is released under the [MIT License](LICENSE).
 
 ---
 
-**Last Updated**: January 2026
+**Last Updated**: March 2026

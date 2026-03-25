@@ -79,3 +79,15 @@ config.properties
 # Root-level temporary markdown files, but keep README.md
 /*.md
 !README.md
+
+# ===================================================================
+# Temporary Output Files
+# ===================================================================
+*.txt
+!requirements.txt
+
+# ===================================================================
+# Research/Paper Files (managed in jml-research repo)
+# ===================================================================
+manuscript.tex
+patch.py
