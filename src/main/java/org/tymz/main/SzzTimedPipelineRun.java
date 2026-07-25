@@ -42,6 +42,10 @@ import java.util.Random;
  * resolves the database path relative to the process's actual working
  * directory, so this is sufficient to guarantee no existing database is
  * touched.
+ *
+ * @author Turgay TAYMAZ
+ * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
  */
 public class SzzTimedPipelineRun {
 

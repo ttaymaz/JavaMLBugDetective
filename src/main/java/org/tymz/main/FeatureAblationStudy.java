@@ -30,7 +30,9 @@ import java.util.Random;
  * Reads the frozen, paper-canonical ARFF dataset snapshot at
  * jml-research/datasets/JML-BugDB-v1.1/arff/.
  *
- * @author Turgay Taymaz
+ * @author Turgay TAYMAZ
+ * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
  */
 public class FeatureAblationStudy {
 

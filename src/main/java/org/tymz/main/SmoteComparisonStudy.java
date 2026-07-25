@@ -30,6 +30,8 @@ import java.util.Random;
  * Prints one CSV row to stdout: project,variant,precision,recall,f1,mcc
  *
  * @author Turgay TAYMAZ
+ * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
  */
 public class SmoteComparisonStudy {
 

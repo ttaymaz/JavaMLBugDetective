@@ -28,6 +28,10 @@ import java.util.regex.Pattern;
  * commits, to estimate full-history wall-clock time before committing to a
  * full read-only re-run. Performs no database writes.
  *
+ * @author Turgay TAYMAZ
+ * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
+ *
  * Usage: SzzTimingBenchmark <repoPath> [sampleSize]
  * Sample commits are chosen with an even stride across the full ordered list
  * of matched bug-fixing commits (not just the most recent N), since per-commit

@@ -33,12 +33,15 @@ import java.util.regex.Pattern;
  * pair it derives, one per line, tab-separated. Performs no database writes and
  * no repository mutation.
  *
- * Rationale: SZZBugLabeler.storeBugLabels() never persisted the fix->BIC
- * association to the database, only a boolean is_buggy flag on the file
- * revision. This exporter closes that gap by re-deriving the mapping directly
- * from the same diff+blame logic, against local repository clones, so the
- * association can be recorded and the validation sample made independently
- * reproducible.
+ * @author Turgay TAYMAZ
+ * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
+ *
+ * Re-derives the fix-commit -> bug-introducing-commit association directly
+ * from the same diff+blame logic against local repository clones, independent
+ * of SZZBugLabeler (which persists only a boolean is_buggy flag on the file
+ * revision, not the fix-to-BIC mapping itself), so the association can be
+ * recorded and the validation sample made independently reproducible.
  *
  * Usage: SzzFullTrace <repoPath> <projectName>
  * Output: stdout receives "project\tfix_commit\tbic_commit\tszz_variant" rows;
