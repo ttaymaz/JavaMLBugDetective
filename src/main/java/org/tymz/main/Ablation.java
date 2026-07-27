@@ -8,6 +8,16 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import java.util.Random;
 
+/**
+ * Early, single-seed ablation check for Gson only. Superseded by
+ * {@link FeatureAblationStudy}, which is the verified, multi-project,
+ * multi-seed runner behind the paper's reported ablation results.
+ * Retained for reference; not part of the reported pipeline.
+ *
+ * @author Turgay TAYMAZ
+ * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
+ */
 public class Ablation {
     public static void main(String[] args) throws Exception {
         DataSource source = new DataSource("gson-dataset.arff");
