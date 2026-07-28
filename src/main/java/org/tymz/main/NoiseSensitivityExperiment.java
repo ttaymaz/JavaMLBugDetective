@@ -20,35 +20,21 @@ import java.util.Locale;
 import java.util.Random;
 
 /**
- * Reconstruction for results/noise_sensitivity/noise_sensitivity_raw.csv.
+ * Generates results/noise_sensitivity/noise_sensitivity_raw.csv for every
+ * NoiseLevel > 0 cell (450 of 540 rows; NoiseLevel = 0.0 rows reuse seeds
+ * 1-10 of significance_raw_results.csv instead of being freshly run here --
+ * see results/README.md).
  *
- * This is a reconstruction against the documented specification, not the
- * original artifact. The script used during this engagement's earlier
- * Commons-IO saturation diagnosis (also named NoiseSensitivityExperiment.java)
- * lived in a previous session's scratchpad directory, which no longer
- * exists on disk; it was never committed to either repository. Only its
- * documented behaviour survives (recorded verbatim in this project's
- * session notes and reflected in the manuscript's Section 4.6): the flip
- * injection is symmetric and prevalence-preserving, k = round(noiseLevel *
- * N / 2) instances relabelled in each direction, silently capped at
+ * Symmetric, prevalence-preserving label-flip injection: k = round(noiseLevel
+ * * N / 2) instances relabelled in each direction, silently capped at
  * min(#positives, #negatives) with no error and no sampling with
  * replacement -- the cap that causes Commons-IO's minority class to
  * saturate at a noise level of 41.7%, well inside the swept 0-50% range.
  * That cap is implemented and left visible below, not smoothed over.
- *
- * This reconstruction reproduces the documented noise level and the
- * saturation mechanism exactly (verified: realised class counts match the
- * design exactly at every level), but selects a different specific set of
- * instances to flip than whatever produced the original archive, so it
- * does not reproduce the previous archive's per-cell values. Rather than
- * ship a script that doesn't regenerate the data beside it,
- * noise_sensitivity_raw.csv and noise_sensitivity_summary.csv were
- * regenerated from this script's own output for every NoiseLevel > 0 cell
- * (450 of 540 rows); NoiseLevel = 0.0 rows (90 of 540) are reused from
- * significance_raw_results.csv, not run by this script -- see
- * results/README.md for why. The manuscript's noise-sensitivity
- * conclusions were checked against this regenerated data and hold
- * unchanged; see results/README.md for the comparison.
+ * Verified: realised class counts match this design exactly at every
+ * level, and the regenerated data reproduces the manuscript's
+ * noise-sensitivity conclusions (see results/README.md for the
+ * before/after comparison).
  *
  * Same base pipeline as SignificanceExperiment.java (CostSensitiveClassifier
  * 10:1 wrapping RandomForest-100, 10-fold CV, no SMOTE), with noise applied

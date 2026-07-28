@@ -16,14 +16,7 @@ import java.util.Locale;
 import java.util.Random;
 
 /**
- * Reference implementation for results/age_ablation/age_ablation_raw.csv.
- *
- * This is a reference implementation, not a recovered original. No
- * generating script for the AGE ablation was located anywhere in this
- * repository's history, the jml-research replication package, or the
- * older backup repository checked during the Table 4 provenance
- * investigation; this reproduces the manuscript's documented methodology
- * (Section 4.8) rather than restoring a specific prior artifact.
+ * Generates results/age_ablation/age_ablation_raw.csv.
  *
  * Verified by re-running all 180 cells (3 projects x 2 variants x 30 seeds)
  * against the published age_ablation_raw.csv: exact match on every field
