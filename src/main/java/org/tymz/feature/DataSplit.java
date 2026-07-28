@@ -7,6 +7,7 @@ import weka.core.Instances;
  *
  * @author Turgay TAYMAZ
  * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
  */
 public class DataSplit {
     private final Instances trainingSet;

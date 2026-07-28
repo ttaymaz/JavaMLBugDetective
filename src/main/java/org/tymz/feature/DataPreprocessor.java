@@ -30,6 +30,7 @@ import java.util.*;
  *
  * @author Turgay TAYMAZ
  * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
  *
  * This class is responsible for:
  * 1. Loading all collected metrics and bug labels from the database

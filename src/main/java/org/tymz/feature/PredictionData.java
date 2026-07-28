@@ -9,6 +9,7 @@ import java.util.List;
  *
  * @author Turgay TAYMAZ
  * @author Assoc. Prof. Dr. Kökten Ulaş BIRANT (Advisor)
+ * @version 1.0.0
  */
 public class PredictionData {
     public final Instances trainingSet;
