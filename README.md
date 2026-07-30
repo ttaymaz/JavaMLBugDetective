@@ -4,7 +4,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-21-orange)]()
 [![Maven](https://img.shields.io/badge/Maven-3.9+-red)]()
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 
 **JavaMLBugDetective** is a machine learning-aided bug prediction framework for Java projects. It combines static code analysis, process metrics, and evolutionary context modeling to predict defect-prone code.
 
@@ -34,7 +33,7 @@ chmod +x clean_and_run.sh
 
 - **SZZ Algorithm**: Identifies bug-introducing commits via enhanced pattern matching
 - **Version-Based Validation**: The framework supports Git-tag-based chronological evaluation as a configurable strategy (`ml.validation.strategy=version-based`); the accompanying paper's reported results use random 10-fold cross-validation instead, not this strategy — see the paper for the evaluation protocol actually used.
-- **Hybrid Metrics**: Combines process, static, and diff/churn metrics
+- **Hybrid Metrics**: Combines process, static, and diff/churn metrics (the accompanying paper counts the diff/churn metrics below among its 7 process metrics, for a 7 static + 7 process split of the same 14 features)
   - Process: NR, NDEV, AGE, EXP
   - Static (CK suite): WMC, TCC, RFC, LCOM, CBO, NCSS_CLASS, CYCLO_SUM
   - Diff/Churn: LINES_ADDED, LINES_DELETED, HUNK_COUNT
