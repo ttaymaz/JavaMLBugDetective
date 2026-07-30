@@ -1,6 +1,6 @@
 # JavaMLBugDetective
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19218373.svg)](https://doi.org/10.5281/zenodo.19218373)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18161122.svg)](https://doi.org/10.5281/zenodo.18161122)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-21-orange)]()
 [![Maven](https://img.shields.io/badge/Maven-3.9+-red)]()
@@ -33,16 +33,16 @@ chmod +x clean_and_run.sh
 ## ✨ Key Features
 
 - **SZZ Algorithm**: Identifies bug-introducing commits via enhanced pattern matching
-- **Version-Based Validation**: Uses Git tags for realistic, chronological evaluation
+- **Version-Based Validation**: The framework supports Git-tag-based chronological evaluation as a configurable strategy (`ml.validation.strategy=version-based`); the accompanying paper's reported results use random 10-fold cross-validation instead, not this strategy — see the paper for the evaluation protocol actually used.
 - **Hybrid Metrics**: Combines process, static, and diff/churn metrics
   - Process: NR, NDEV, AGE, EXP
-  - Static (CK suite): WMC, CBO, RFC, LCOM, CYCLO
+  - Static (CK suite): WMC, TCC, RFC, LCOM, CBO, NCSS_CLASS, CYCLO_SUM
   - Diff/Churn: LINES_ADDED, LINES_DELETED, HUNK_COUNT
 - **ML Pipeline**: RandomForest, J48, NaiveBayes, SMO (via Weka)
 - **Class Balancing**: SMOTE and ClassBalancer
 - **Cost-Sensitive Learning**: Configurable FN/FP cost matrix
 - **Automated Reporting**: Scientific validation and prediction reports
-- **Green AI**: 32,000x more energy-efficient than LLM-based approaches
+- **Measured Efficiency**: The full three-project pipeline (SZZ labeling, feature extraction, training) runs in 30.6 minutes end-to-end, no GPU required
 
 ---
 
@@ -128,22 +128,21 @@ Evaluation metrics comparing 5 distinct algorithms evaluating the 'buggy' target
 | SMO            | 0.4518    | 0.9996 | 0.6223   | -0.0017|
 | AdaBoostM1     | 0.4518    | 1.0000 | 0.6224   | NaN    |
 
-*Note: Sequential boosting algorithms like AdaBoost collapse under the extreme SZZ label noise combined with SMOTE, while parallel ensembles (RandomForest) successfully isolate the true defect signal.*
+*Note: This benchmark uses the framework's default configuration (SMOTE-based class balancing included), which is distinct from the CostSensitiveClassifier-only pipeline used for the accompanying paper's reported results (see the paper, Section 3.3.1, for why SMOTE was dropped from that pipeline). Within this SMOTE-containing configuration, sequential boosting algorithms (e.g., AdaBoost) proved more susceptible to degenerate predictions (NaN or near-zero MCC) than parallel ensembles (RandomForest).*
 
-### Cross-Project Validation Results
+### Within-Project Validation Results
 
-Cross-project validation results (Hybrid Model with Cost-Sensitive Learning):
+Evaluation is within-project 10-fold cross-validation (Hybrid Model with Cost-Sensitive Learning, mean over 30 independently seeded runs):
 
-| Project | F1-Score | Precision | Recall | Instances |
-|---------|----------|-----------|--------|----------|
-| Apache Kafka | 0.742 | 0.61 | 0.94 | 72,705 |
-| Google Gson | 0.685 | 0.52 | 0.99 | 6,034 |
-| Apache Commons-IO | 0.570 | 0.40 | 0.99 | 12,920 |
+| Project | F1-Score | MCC |
+|---------|----------|-----|
+| Apache Kafka | 0.734 | 0.235 |
+| Google Gson | 0.696 | 0.382 |
+| Apache Commons-IO | 0.608 | 0.495 |
 
 **Ablation Study Highlights:**
-- Hybrid model outperforms static-only by up to **128%** (Commons-IO)
-- Process metrics consistently outperform static metrics
-- Model maintains robust performance despite 70.8% label noise
+- Hybrid model outperforms static-only by up to **55%** (Commons-IO, F1)
+- Process-based features provide a statistically robust advantage over static features **at the observed 50.5% label-noise level**; this advantage does not extend to further label degradation (see the accompanying paper's label-noise sensitivity analysis)
 
 ---
 
@@ -169,7 +168,7 @@ Cross-project validation results (Hybrid Model with Cost-Sensitive Learning):
 
 The **JML-BugDB** dataset and complete replication package are permanently archived at Zenodo:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19218373.svg)](https://doi.org/10.5281/zenodo.19218373)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18161122.svg)](https://doi.org/10.5281/zenodo.18161122)
 
 The package includes:
 - JML-BugDB dataset (91,633 instances across 3 Java projects)
@@ -189,8 +188,8 @@ If you use this work in your research, please cite:
   title     = {JavaMLBugDetective: ML-Aided Bug Prediction Framework},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.19218373},
-  url       = {https://doi.org/10.5281/zenodo.19218373}
+  doi       = {10.5281/zenodo.18161122},
+  url       = {https://doi.org/10.5281/zenodo.18161122}
 }
 ```
 
@@ -221,4 +220,4 @@ This project is released under the [MIT License](LICENSE).
 
 ---
 
-**Last Updated**: March 2026
+**Last Updated**: July 2026
