@@ -79,7 +79,7 @@ repository.local.path=./repositories/your-project
 project.name=your-project
 
 # SZZ settings
-szz.bug_fix_keywords=fix,bug,issue,defect,error,fault,problem,crash,exception
+szz.bug_fix_keywords=crash,exception,error,fault,fail,npe,nullpointer,incorrect result
 
 # ML settings
 ml.algorithm=all
